@@ -19,6 +19,9 @@ public class Client implements Serializable {
 	private Long naissance;
 	private String mail;
 	private String adresse;
+	private String ville;
+	private String pays;
+	private Long codePostale;
 	private String mdp;
 	private Long tel;
 	private String username;
@@ -49,6 +52,18 @@ public class Client implements Serializable {
 	public String getAdresse() {return adresse;}
 
 	public void setAdresse(String adresse) {this.adresse = adresse;}
+	
+	public String getVille() {return ville;}
+
+	public void setVille(String ville) {this.ville = ville;}
+
+	public String getPays() {return pays;}
+
+	public void setPays(String pays) {this.pays = pays;}
+	
+	public Long getCodePostale() {return codePostale;}
+
+	public void setCodePostale(Long codePostale) {this.codePostale = codePostale;}
 
 	public String getMdp() {return mdp;}
 
