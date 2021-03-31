@@ -16,7 +16,11 @@ $(document).ready(function() {
 
 		$.ajax({
 		    type: "POST",
+<<<<<<< Updated upstream
 		    url: "http://localhost:8080/api/personnes", //a changer
+=======
+		    url: "http://localhost:8080/client",
+>>>>>>> Stashed changes
 		    data: JSON.stringify({ "nom": nom,
  									"prenom" : prenom,
  									"naissance": naissance,
