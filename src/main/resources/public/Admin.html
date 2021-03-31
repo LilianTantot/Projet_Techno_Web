@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<title>page admin</title>
+</head>
+
+<body>
+	<h1>Ajout d'un article</h1>
+	<form>
+  		<div class="form-group">
+    		<label>Nom de l'article : </label>
+    		<input type="text" id="nom_article" placeholder="Nom de l'article">
+ 		</div>
+ 		<div class="form-group">
+    		<label>Catégorie d'article : </label>
+    		<select class="form-control" id="categorie_article">
+      			<option>Pantalon</option>
+      			<option>T-shirt</option>
+      			<option>Pull</option>
+      			<option>Chemise</option>
+    		</select>
+  		</div>
+  		<div class="form-group">
+    		<label>Taille : </label>
+    		<select class="form-control" id="taille_article">
+      			<option>S</option>
+      			<option>M</option>
+      			<option>L</option>
+      			<option>XL</option>
+    		</select>
+  		</div>
+  		<div class="form-group">
+    		<label>Couleur de l'article : </label>
+    		<input type="text" id="couleur_article" placeholder="Nom de l'article">
+ 		</div>
+ 		<div class="form-group">
+  			<label> Stock : </label>
+			<input type="number" id="stock_article" placeholder="stock de l'article">
+		</div>
+		<div class="form-group">
+    		<label>Description : </label>
+    		<textarea class="form-control" id="description_article" rows="1" placeholder="description de l'article"></textarea>
+  		</div>
+  		<div>
+			<label>Sexe : (entrez 0 pour femme et 1 pour homme)</label>
+			<input type="number" id="sexe_article" placeholder="0=femme, 1=homme">
+		</div>
+  		<div>
+			<label>Image de l'article : (entrez un lien) </label>
+			<input type="text" id="image_article" placeholder="lien de l'image">
+		</div>
+		<div class="form-group">
+			<input type="button" id="addbtnArticle" name="addbtn" value="Ajouter" class="btn btn-primary btn-sm" />
+		</div>		
+	</form>
+	<!-- Script -->
+		<script src="Admin.js"></script>
+</body>
+</html>
