@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#addbtnArticle').click(function(){
+	$('#addbtnClient').click(function(){
 		let nom = $('#nom_input').val();
 		let prenom = $('#prenom_input').val();
 		let naissance = $('#naissance_input').val();
@@ -11,16 +11,11 @@ $(document).ready(function() {
 		let mail = $('#mail_input').val();
 		let username = $('#username_input').val();
 		let mdp = $('#mdp_input').val();
-		let codeAdmin = $('#codeAdmin_input').val();
-
-
+		let codeAdmin = false;
+		console.log("Pitier marche");
 		$.ajax({
 		    type: "POST",
-<<<<<<< Updated upstream
-		    url: "http://localhost:8080/api/personnes", //a changer
-=======
-		    url: "http://localhost:8080/client",
->>>>>>> Stashed changes
+		    url: "http://localhost:8080/API/client",
 		    data: JSON.stringify({ "nom": nom,
  									"prenom" : prenom,
  									"naissance": naissance,
@@ -28,13 +23,13 @@ $(document).ready(function() {
  									"adresse": adresse,
  									"ville": ville,
 									"pays": pays,
- 									"CodePostale": CP,
+ 									"codePostale": CP,
  									"mdp": mdp,
 								 	"tel": tel,
 							 		"username": username }),
 		    contentType: "application/json; charset=utf-8",
 		    dataType: "json",
-		    success: function(data){ appendToListPersonne(data) } // a changer
+		    success: function(data){}
 		});
 		
 		$('#nom_input').val('');
@@ -48,7 +43,6 @@ $(document).ready(function() {
 		$('#mdp_input').val('');
 		$('#tel_input').val('');
 		$('#username_input').val('');
-		$('#codeAdmin_input').val('');
 		return false;
 	});
 });

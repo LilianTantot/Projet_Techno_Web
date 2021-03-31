@@ -1,11 +1,15 @@
 package com.example.demo;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Client implements Serializable {
@@ -26,6 +30,8 @@ public class Client implements Serializable {
 	private Long tel;
 	private String username;
 	private Boolean adminBool;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Achat> achat;
 	
 	public Client() {super();}
 

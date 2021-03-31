@@ -34,7 +34,7 @@
   		</div>
   		<div class="form-group">
     		<label>Couleur de l'article : </label>
-    		<input type="text" id="couleur_article" placeholder="Nom de l'article">
+    		<input type="text" id="couleur_article" placeholder="couleur de l'article">
  		</div>
  		<div class="form-group">
   			<label> Stock : </label>
@@ -45,18 +45,22 @@
     		<textarea class="form-control" id="description_article" rows="1" placeholder="description de l'article"></textarea>
   		</div>
   		<div>
-			<label>Sexe : (entrez 0 pour femme et 1 pour homme)</label>
-			<input type="number" id="sexe_article" placeholder="0=femme, 1=homme">
+			<label>Sexe : </label>
+			<select class="form-control" id="sexe_article">
+      			<option>Homme</option>
+      			<option>Femme</option>
+      			
+    		</select>
 		</div>
   		<div>
 			<label>Image de l'article : (entrez un lien) </label>
 			<input type="text" id="image_article" placeholder="lien de l'image">
 		</div>
 		<div class="form-group">
-			<input type="button" id="addbtnArticle" name="addbtn" value="Ajouter" class="btn btn-primary btn-sm" />
+			<p> <button id="addbtnArticle">Ajouter</button></p>
 		</div>		
 	</form>
 	<!-- Script -->
-		<script src="Admin.js"></script>
+		<script src="js/Admin.js"></script>
 </body>
 </html>

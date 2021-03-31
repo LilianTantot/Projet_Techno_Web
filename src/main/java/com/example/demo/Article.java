@@ -11,14 +11,13 @@ public class Article {
 	@GeneratedValue( strategy = GenerationType.AUTO)
 	private Long IDart;
 	private String nom;
-	private String prenom;
-	private Boolean Sexe; //false = femme et true = homme
+	private String sexe; 
 	private String categorie;
 	private String description;
 	private String taille;
 	private Long stock;
-	private Long vente;
-	private Boolean Art_bool;
+	private String couleur;
+	private String image;
 	
 	public Article() {super();}
 
@@ -30,13 +29,9 @@ public class Article {
 
 	public void setNom(String nom) {this.nom = nom;}
 
-	public String getPrenom() {return prenom;}
+	public String getSexe() {return sexe;} 
 
-	public void setPrenom(String prenom) {this.prenom = prenom;}
-	
-	public Boolean getSexe() {return Sexe;}
-
-	public void setSexe(Boolean sexe) {Sexe = sexe;}
+	public void setSexe(String sexe) {this.sexe = sexe;}
 
 	public String getCategorie() {return categorie;}
 
@@ -53,13 +48,13 @@ public class Article {
 	public Long getStock() {return stock;}
 
 	public void setStock(Long stock) {this.stock = stock;}
+
+	public String getCouleur() {return couleur;}
+
+	public void setCouleur(String couleur) {this.couleur = couleur;}
+
+	public String getImage() {return image;}
+
+	public void setImage(String image) {this.image = image;}
 	
-	public Long getVente() {return vente;}
-
-	public void setVente(Long vente) {this.vente = vente;}
-
-	public Boolean getArt_bool() {return Art_bool;}
-
-	public void setArt_bool(Boolean art_bool) {Art_bool = art_bool;}
-
 }
