@@ -3,6 +3,13 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/index.css" />
+        <meta charset="ISO-8859-1">
+        	<link rel="stylesheet" type="text/css" href="css/index.css">
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+			<script >
+				var session = JSON.parse(window.sessionStorage.getItem('session'));
+				$('#NomUsername').html(session.username);
+			</script>
         <title>Accueil</title>
     </head>
     
@@ -18,6 +25,7 @@
                         <li><a href="#">Shop</a></li>
                         <li><a href="#">Homme</a></li>
                         <li><a href="#">Femme</a></li>
+                        <li><a id="NomUsername" href="#"></a> </li>
                     </ul>
                 </nav>
 
