@@ -3,6 +3,13 @@
  */
 
 $(document).ready(function() {
+	
+	$.get('http://localhost:8080/API/article',function(resp){
+		$.each(resp, function(index, item){
+			$('#list-article').append('<li id="article-'+item.IDart+'">'+item.nom+' '+item.taille+' '+item.couleur + ' '+ item.sexe+ ' <button class="btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >X</button></li>');
+		})
+	})
+	
 	$('#addbtnArticle').click(function(){
 		let nom = $('#nom_article').val();
 		let categorie = $('#categorie_article option:selected').val();
@@ -29,7 +36,9 @@ $(document).ready(function() {
                                     "image": image }),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            success: function(data){console.log("test");},
+            success: function(data){
+				$('#list-article').append('<li id="article-'+data.IDart+'">'+data.nom+' '+data.taille+' '+data.couleur + ' '+ data.sexe+ ' <button class="btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >X</button></li>');
+			},
             error: function(){console.log('error');}
         }); 	
 	
@@ -45,4 +54,27 @@ $(document).ready(function() {
 		$('#image_article').val('');
 		return false;
 	});
+	
+	
+	/*Supprimer Element du tableau*/
+$('#list-article').delegate("li button", "click", function() {
+        let idart = $(this).parent().attr('id').replace('article-','');
+        
+        $.ajax({
+            type: "DELETE",
+            url: "http://localhost:8080/API/article/"+idart ,
+            dataType: "json",
+            success: function(data){
+                $('#article-'+idart).remove();
+            },
+            error: function(){
+                alert('Error while Request Processing');
+            }
+        });    
+    });
+
 });
+
+
+
+
