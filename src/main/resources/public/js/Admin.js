@@ -6,7 +6,7 @@ $(document).ready(function() {
 	
 	$.get('http://localhost:8080/API/article',function(resp){
 		$.each(resp, function(index, item){
-			$('#list-article').append('<li id="article-'+item.IDart+'">'+item.nom+' '+item.taille+' '+item.couleur + ' '+ item.sexe+ ' <button class="btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >X</button></li>');
+			$('#list-article').append('<li id="article-'+item.idart+'">'+item.nom+' '+item.taille+' '+item.couleur + ' '+ item.sexe+ ' <button class="btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >X</button></li>');
 		})
 	})
 	
@@ -25,7 +25,7 @@ $(document).ready(function() {
 		
 		$.ajax({
             type: "POST",
-            url: "http://localhost:8080/API/article/creation",
+            url: "http://localhost:8080/API/article",
             data: JSON.stringify({ "nom": nom,
 									"sexe": sexe,
                                     "categorie": categorie,
@@ -37,7 +37,7 @@ $(document).ready(function() {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(data){
-				$('#list-article').append('<li id="article-'+data.IDart+'">'+data.nom+' '+data.taille+' '+data.couleur + ' '+ data.sexe+ ' <button class="btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >X</button></li>');
+				$('#list-article').append('<li id="article-'+data.idart+'">'+data.nom+' '+data.taille+' '+data.couleur + ' '+ data.sexe+ ' <button class="btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >X</button></li>');
 			},
             error: function(){console.log('error');}
         }); 	

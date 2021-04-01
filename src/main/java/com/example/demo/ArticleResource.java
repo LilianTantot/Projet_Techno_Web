@@ -29,6 +29,7 @@ public class ArticleResource {
 	
 
 	@GET
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Article> getAllArticles() {
     	List<Article> articles = new ArrayList<>();
@@ -38,6 +39,7 @@ public class ArticleResource {
 	
 	@DELETE
     @Path("{idArticle}")
+	@Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteArticle(@PathParam("idArticle") Long idArticle) {
         if (articleRepo.findById(idArticle).isPresent()) {
