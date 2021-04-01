@@ -16,6 +16,7 @@ public class ClientRessource {
 	@Autowired
 	private ClientRepository clientRepo; 
 	
+	//webservice servant à créer un client
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -24,6 +25,7 @@ public class ClientRessource {
 		return clientRepo.save(c);
 	}
 	
+	//webservice servant à gérer la connexion d'un utilisateur
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)

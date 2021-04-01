@@ -13,6 +13,7 @@ $(document).ready(function() {
 		let mdp = $('#mdp_input').val();
 		let codeAdmin = false;
 
+		//gestion de l'inscription d'un client 
 		$.ajax({
 		    type: "POST",
 		    url: "http://localhost:8080/API/client/inscription",

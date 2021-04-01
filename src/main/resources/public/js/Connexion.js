@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	//gestion de la connexion
 	$('#connexionsite').click(function(){
 		console.log('button');
 		let username = $('#username_input').val();

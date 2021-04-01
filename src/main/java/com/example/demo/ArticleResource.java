@@ -20,6 +20,7 @@ public class ArticleResource {
 	@Autowired
 	private ArticleRepository articleRepo; 
 	
+	//webservice servant à créer un article
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -27,7 +28,7 @@ public class ArticleResource {
 		return articleRepo.save(a);
 	}
 	
-
+	//webservice servant à donner tous les articles disponible dans la table article
 	@GET
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -37,6 +38,7 @@ public class ArticleResource {
     	return articles;
 	}
 	
+	//webservice servant à supprimer un articles
 	@DELETE
     @Path("{idArticle}")
 	@Consumes(MediaType.APPLICATION_JSON)

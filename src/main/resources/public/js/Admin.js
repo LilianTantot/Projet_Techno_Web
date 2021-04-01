@@ -4,6 +4,7 @@
 
 $(document).ready(function() {
 	
+	//ici on affiche les différents article dans la table Article
 	$.get('http://localhost:8080/API/article',function(resp){
 		$.each(resp, function(index, item){
 			$('#list-article').append('<li id="article-'+item.idart+'">'+item.nom+' '+item.taille+' '+item.couleur + ' '+ item.sexe+ ' <button class="btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >X</button></li>');
@@ -18,11 +19,10 @@ $(document).ready(function() {
 		let stock = $('#stock_article').val();
 		let description = $('#description_article').val();
 		let sexe = $('#sexe_article option:selected').val();
-		console.log(sexe);
 		let image = $('#image_article').val();
 		
-		console.log("Pitier marche");
 		
+		//ici on gère la création d'un article dans la page admin
 		$.ajax({
             type: "POST",
             url: "http://localhost:8080/API/article",
@@ -56,8 +56,8 @@ $(document).ready(function() {
 	});
 	
 	
-	/*Supprimer Element du tableau*/
-$('#list-article').delegate("li button", "click", function() {
+	//Ici on gère la suppression d'un article de la page admin et de la BDD
+	$('#list-article').delegate("li button", "click", function() {
         let idart = $(this).parent().attr('id').replace('article-','');
         
         $.ajax({
