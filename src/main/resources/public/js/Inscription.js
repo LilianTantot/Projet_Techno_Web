@@ -12,10 +12,10 @@ $(document).ready(function() {
 		let username = $('#username_input').val();
 		let mdp = $('#mdp_input').val();
 		let codeAdmin = false;
-		console.log("Pitier marche");
+
 		$.ajax({
 		    type: "POST",
-		    url: "http://localhost:8080/API/client",
+		    url: "http://localhost:8080/API/client/inscription",
 		    data: JSON.stringify({ "nom": nom,
  									"prenom" : prenom,
  									"naissance": naissance,
@@ -29,7 +29,10 @@ $(document).ready(function() {
 							 		"username": username }),
 		    contentType: "application/json; charset=utf-8",
 		    dataType: "json",
-		    success: function(data){}
+		    success: function(data){
+			console.log("test");
+			window.location.assign("http://localhost:8080/Index.html");
+			}
 		});
 		
 		$('#nom_input').val('');

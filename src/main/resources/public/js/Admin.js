@@ -18,7 +18,7 @@ $(document).ready(function() {
 		
 		$.ajax({
             type: "POST",
-            url: "http://localhost:8080/API/article",
+            url: "http://localhost:8080/API/article/creation",
             data: JSON.stringify({ "nom": nom,
 									"sexe": sexe,
                                     "categorie": categorie,

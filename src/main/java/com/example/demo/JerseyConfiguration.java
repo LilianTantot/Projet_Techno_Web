@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component;
 public class JerseyConfiguration extends ResourceConfig{
 	public JerseyConfiguration(){
 		register(ClientRessource.class);
-		register(ArticleResource.class);
+		register(ArticleRessource.class);
 	}
 }

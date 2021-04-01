@@ -7,8 +7,15 @@
         	<link rel="stylesheet" type="text/css" href="css/index.css">
 			<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 			<script >
+			$(document).ready(function(){
 				var session = JSON.parse(window.sessionStorage.getItem('session'));
 				$('#NomUsername').html(session.username);
+				if(session.adminBool == true){
+					$('.navigation').append('<li><a href="Admin.html">Admin</a></li>');
+				}
+				
+			})
+			
 			</script>
         <title>Accueil</title>
     </head>
@@ -21,11 +28,11 @@
                 </div>
                 
                 <nav>
-                    <ul>
+                    <ul class="navigation">
                         <li><a href="#">Shop</a></li>
                         <li><a href="#">Homme</a></li>
                         <li><a href="#">Femme</a></li>
-                        <li><a id="NomUsername" href="#"></a> </li>
+                        <li><a id="NomUsername" href=""></a> </li>
                     </ul>
                 </nav>
 
@@ -125,4 +132,6 @@
             </footer>
         </div>
     </body>
+    <!-- Script -->
+    <script src="js/Index.js"></script>
 </html>

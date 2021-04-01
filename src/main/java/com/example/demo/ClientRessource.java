@@ -19,6 +19,7 @@ public class ClientRessource {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
+	@Path("inscription")
 	public Client createClient(Client c) {
 		return clientRepo.save(c);
 	}
@@ -28,7 +29,7 @@ public class ClientRessource {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("connexion")
 	public Response getLogin(LoginInput li) {
-		Optional<Client> optc = clientRepo.findByUsernameAndPassword(li.getUsername(), li.getPassword());
+		Optional<Client> optc = clientRepo.findByUsernameAndMdp(li.getUsername(), li.getPassword());
 		if(!optc.isPresent()) return Response.status(Response.Status.NOT_FOUND).build();
 		
 		return Response.ok(optc.get()).build();

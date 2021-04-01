@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface ClientRepository extends CrudRepository<Client, Long>{
 	
-	@Query("select c from Client c where c.username = :username and c.password = :password ")
-    Optional<Client> findByUsernameAndPassword(@Param("username") String username,@Param("password") String password);
+	@Query("select c from Client c where c.username = :username and c.mdp = :mdp ")
+    Optional<Client> findByUsernameAndMdp(@Param("username") String username,@Param("mdp") String password);
 }
 

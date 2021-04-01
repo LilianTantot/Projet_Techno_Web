@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$('#connexionsite').click(function(){
+		console.log('button');
 		let username = $('#username_input').val();
 		let password = $('#password_input').val();
 		$.ajax({
@@ -11,10 +12,10 @@ $(document).ready(function() {
 		    contentType: "application/json; charset=utf-8",
 		    dataType: "json",
 		    success: function(data){
-			console.log('data');
-			window.sessionStorage.setItem('session', JSON.stringify(data));
+			window.sessionStorage.setItem('session', JSON.stringify(data));	
 			window.location.assign("http://localhost:8080/Index.html");
-		}
+		},
+		error: function(){console.log('error');}
 		});
 		
 		$('#username_input').val('');
